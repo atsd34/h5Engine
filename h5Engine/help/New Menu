@@ -1,0 +1,27 @@
+Creating Menu Items
+	Adding Items to Any Menu
+		When you are creating a plugin or new functionality sometimes you need to add new menu items. To add new menu item to anywhere(to top menu or any window - you may have already saw this function in @New Editor Window@ 
+		or @Custom Editor for properties@ ) use "function addMenu(Label, Function, Parent, Where, Class) " function
+		Label : This will be label assigned to menu which user will see
+		Function : This function will be executed when menu item clicked
+		Parent : undefined or jQuery selector of this menu, when this parameter is set this will be a sub menu.
+		Where : jQuery selector of container. When this item is set this item will be added as new button to place that is set with this parameter. If this is left undefined, item will be added to top menu.
+		Class : Class string will be added to menu item's button. This is not mandatory but if you want to use button somewhere else it makes easier.
+		//Example 1
+		addMenu("Test Alert", function () { alert("New menu item");}); // This will add new menu item to top menu
+		Result:
+		@@TopmenuItem.png@@
+		//Example 2
+		addMenu("Main Menu", undefined,undefined,undefined,"btnMenu");
+		addMenu("Test Alert", function () { alert("New menu item");},".btnMenu"); // This will add new menu item as sub menu
+		Result:
+		@@TopmenuItem2.png@@
+		//Example 3 This example assumes you enabled physics via box2d
+		overrideFunction(this,"gameHierarchy1",function(){ //Everytime hierarchy changes window is redrawn using this so you need to overrride default function
+		addMenu("Create Physics GameObject", function () { 
+				socketemit("addGameObject",{Physics:{}}); // This will add new gameobject to scene with default physics
+			}, "", "#gamehierarchy", "btnAddHierarchy"); // This will add new menu item to hierarchy window
+		});
+		gameHierarchy1(); // We havent call actual function so simply we redraw hierarchy
+		Result:
+		@@TopmenuItem3.png@@

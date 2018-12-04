@@ -1,0 +1,77 @@
+Adding functionality to game view (Advanced)
+	What is default mouse actions?
+		By default h5Engine gameview is where you can position your gameobjects or you can select your gameobjects. If you click any object it will deselect your current selected gameobject and select new gameobject or if you drag your gameobject it will change its position.
+	Why do i need to change this?
+		If you are making some plugin that has drawing capabilities this default actions will get in your way while drawing. (For more complicated example you can check box2d plugin-> box2dUtil.js (Check mouse actions))
+	How to do 
+		locking default actions actually very simple you can set global variable "lockedSelection" true to prevent default actions and false to enable that again.
+
+		//This component will draw black dots and serialize that can be seen in actual game
+		gm.Drawer = function () {
+			this.worksInEditor = true; //IMPORTANT you need to set this true 
+			this.Editing = false; //This will enable/disable on gameview editing
+			$this = this;
+			newObservable($this, "Editing", undefined, function (value) { //We will lock/unlock default actions with "Editing" checkbox
+				lockedSelection = value; //If editing we will lock default actions otherwise we will unlock
+			});
+			this.points = [[0, 0], [0, 5]]; //Where points will be stored
+			this.customDiv = {
+				resetMe: function (container) {
+					var $this = this;
+					addMenu("Remove All Dots", function () {
+						$this.points = [];
+						CommitValue($this.gameObject, "Drawer", "points");
+						$this.graphics.clear();
+						$this.Draw();
+					}, "", container, "");
+				}
+			}
+			this.drawing = false;
+			this.private = { drawing: true }; // We dont need this value on properties
+			this.serializeObject = { points: true } // We need points on actual gameplay, by default arrays are not serialized
+		}
+		gm.Drawer.prototype.create=function () {
+			this.Editing = false; //Just to be safe.
+			this.graphics = new PIXI.Graphics(); //h5Engine uses PIXI behind scenes you can use any functionality it provides
+			this.gameObject.position.container.addChild(this.graphics);
+			this.Draw();
+		}
+		gm.Drawer.prototype.update = function (dt) {
+			if (INEDITOR && this.Editing) { //While working in editor and drawing we update on every frame
+				this.graphics.clear();
+				this.Draw();
+			}
+		}
+		gm.Drawer.prototype.Draw = function () {
+			for (var i = 0; i < this.points.length; i++) {
+				var p = this.points[i];
+				this.graphics.lineStyle(4, 0x0, 1);
+				this.graphics.drawCircle(p[0], p[1] , 2);
+				this.graphics.lineStyle(0);
+			}
+		}
+		gm.Drawer.prototype.mouseDown = function (mouse) {
+			if (this.Editing && mouse.left) { //While editing left mouse starts draw and adds a dot to array
+				this.points.push([mouse.x - this.gameObject.position.x, mouse.y - this.gameObject.position.y]); //Align mouse with gameobject
+				this.drawing = true;
+			}
+		}
+		gm.Drawer.prototype.mouseMove = function (mouse) {
+			if (this.Editing && this.drawing) { //While editing and drawing mouse move adds a dot to array
+				this.points.push([mouse.x - this.gameObject.position.x, mouse.y - this.gameObject.position.y]);
+			}
+		}
+		gm.Drawer.prototype.mouseUp = function () {
+			if (this.Editing) { //While editing mouseup ends drawing and commits points to server to serialize this.
+				CommitValue(this.gameObject, "Drawer", "points");
+				this.drawing = false;
+			}
+		}
+		gm.Drawer.prototype.dispose=function () {
+			if (this.graphics) {
+				this.gameObject.position.container.removeChild(this.graphics); //PIXI safe
+				delete this.graphics;
+			}
+		}
+		Result:
+		@@painter.png@@

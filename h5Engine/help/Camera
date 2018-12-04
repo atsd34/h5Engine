@@ -1,0 +1,15 @@
+Camera
+	Game Camera
+		Every object in h5Engine is stored in "objects" object there is one exception for this ; Camera. You can access camera with "camera" object. Camera controls where gameview look at all objects are drawn relative to camera.
+		You cannot set camera from gameview camera related actions must be done in simple coding.
+	Coding
+		"camera" object have following properties.
+		x,y : This is where camera's lookAt position. Any object that is at the same position as camera x-y will be centered.
+		function camera.follow(go,percent) : With this easy function you can make a camera to stick to a gameobject, that gameobject always will be locked to center. With second parameter you can add easing effect. At 100 camera will follow immediately at 5 (for example) camera always tries to catch up to gameobject.
+		camera.followX , camera.followY : with this boolean variables you can toggle following X or following Y positions. When camera.followX ==false and camera.followY ==true , then camera will follow Y position but not X position , X position must be set manually.
+		//Example 
+		camera.x= 200; // now camera's center position is set to x=200 - for easy reference think an object with x position =200 that object will be centered.
+		camera.follow(objects.GameObject0,20); // now camera's x and y values will be calculated automatically to follow GameObject0.
+		camera.followY=false; // Dont follow GameObject0's y value.
+		camera.y=-100; // now camera's center position's y value is set to static -100. camera's x position will always follow GameObject0 whereas camera y position will always be -100;
+

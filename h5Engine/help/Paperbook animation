@@ -1,0 +1,11 @@
+Paperbook Animation
+	What is it?
+		Its a just easy way to do sprite animation for prototyping or if game needs only light animation you can use it, otherwise spritesheets always recommended.
+		1: Create new animation file from assets window top menu
+		@@paper0.png@@
+		2: Double click new asset it will open new window.
+		3: Double click images that needs to be added to paperbook, you can add images multiple times.
+		4: In gameObject's sprite component select path as new animation (it is automatically saved) , and set FPS
+		@@paper1.png@@
+		Result: 
+		@@paperanim.gif@@

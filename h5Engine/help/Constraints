@@ -1,0 +1,8 @@
+Constraints
+	Revolute Constraint
+		Revolute constraint is how you attach two physics object. If you add revolute constraint to one physics object and set another object as "otherGameObjectName" they will attached and will have fix distance.
+		For example if you make 2nd object static and 1st as not-static it can rotate around it.
+		@@physics.gif@@
+		otherGameObjectName : The object that has revolute constraint will bind to an object that is name is set here. If left empty, world is considered as 2nd object and Anchor is calculated as world position.
+		AnchorX ,AnchorY : Anchor point for first object is always center of gameobject but you can set anchor point relative to 2nd gameobject.
+	

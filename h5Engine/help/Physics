@@ -1,0 +1,20 @@
+Physics
+	Box2d or p2js or Miniphysics
+		h5Engine offers 3 physics engine to choose from by default. Their interfaces are very similliar so you can change physics engine after you created your project. But choosing from start and knowing its capabilities is a big plus.
+		p2js is awesome physics engine and i love it, but if you have no idea to what to choose box2d is recommended (More examples on the internet well known etc.) Or if you need very very lightweight physics engine you can choose miniphysics. Its an small engine that we made along the way.
+		NOTE : If you need liquid simulation always choose box2d only box2d offers stable liquid physics.
+		Information for documentation : generally apply to p2js aswell but everything is written for box2d.js
+	Web sites
+		These are the tools behind the scenes makes physics work.Box2d and p2js are main physics engine and decomp is a tool to make concave polygons work for box2d.
+		 p2.js: @https://schteppe.github.io/p2.js/@
+		 Liquidfun-Box2d: @https://github.com/flyover/box2d.js@
+		 Poly decomp.js: @https://github.com/schteppe/poly-decomp.js/@
+
+	World
+		When you add physics plugin to your project, Box2dWorld or P2World GameObject will be created automatically for every scene. If you are only using what h5Engine offers (Bodies, shapes constraints simple physics subjects.) you dont need to do anything with these objects. But if you go and inspect box2d or p2js code and add additional functionalities you may hack source code.
+		Physics world is stored in global variable "world" outside of h5Engine ecosystem if you ever need to use it.
+		//Example
+		//world.m_gravity.y=10; //Default is 980
+	
+
+

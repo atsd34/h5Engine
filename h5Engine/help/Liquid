@@ -1,0 +1,19 @@
+Liquid simulation
+	Create liquid
+		Google Liquidfun is integrated to h5Engine if you need liquid simulation. You can create liquids without touching code in notime.
+		To create
+		1- Create new gameObject
+		2- Add Physics component, remove sprite component.
+		3- In Physics Component Check isLiquid
+		4- Create starting shape of liquid (as box ,circle or polygon)
+		5- Select particleImage (If you dont have any just start with "_standartAssets\general\DefaultParticlePixel.png")
+		6- Set other properties (explained below.)
+		maxParticleInOneFrame : Liquid particle amount is calculated automatically if you have too small liquid particle in big shape then there will be performance impact, you can limit here. But generally you want too big amount so there wont be any loss.
+		particleRadius : Every particle is essentially a circle, this will set its radius.
+		particleType : This will set object behaviour you can make it act like water ,sticky jar, elastic (like jelly) or even can make it solid wall.
+		particleImage : Every particle and its shadows will be rendered with this image.
+		particleImageShadow : amount of shadow to add particles this makes every particle look like droplet instead of just circle. If you want circle anyway you can set this to 0.
+		particleImageWidth : particleRadius sets particle size in physics world this one sets its width in visual world which is rendered. 
+		Result: 
+		@@liquid.png@@
+		@@liquid.gif@@

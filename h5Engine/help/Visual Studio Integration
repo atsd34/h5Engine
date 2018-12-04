@@ -1,0 +1,10 @@
+	Start / Break Integration
+		When you create new project in h5Engine It automatically connect with visual studio first time you open project with Visual Studio. However if you wish to break connection for any reason you can change From top menu->settings->connectedVisualStudio option
+	What does it mean
+		When you work your project from editor, If you connected to visual studio everything syncs perfectly two way around. When you change script from editor visual studio updates or when you change script from visual studio editor will also update. Also If you add asset from editor or from file system it will sync with Visual studio automatically.
+		When you change current scene exportProperties.js file changes to reflect this changes or when you add -remove plugin it syncs.
+	Advantages to work from visual studio
+		h5Engine has its own script editor. But Visual studio is amazing editor for javascript. Also You can test scene from editor (More information on Getting Started) and debug with browser's debugger. But in visual studio you can also debug with visual studio's powerful debugger.
+	Can I develop games without even touching visual studio
+		We highly reccomend visual studio it is free (community edition -fully featured) and awesome. But if you dont want you can do everything from editor(See @Script Editor@ for more info) or you can work with your own editor choice (Just open public folder of your project, and run from editor)
+

@@ -1,0 +1,13 @@
+Game View Window
+		Game View Window is where your games initial state is shown AKA its a Level editor. 
+		Top of the view there is 4 button; to decide what mouse actions do; 
+		Work : is default behaviour which you can select/move game objects with left click or left drag . 
+		Pan : is behaviour that you can pan scene with left mouse drag.
+		Zoom : is behaviour that you can zoom in/out scene with left mouse drag.
+		Reset : when you click this button scene will be resetted to default zoom and default pan (1 zoom x:0 y:0 drag)
+		NOTE : Mouse Wheel always zooms in and out (Mouse's current position is set as origin)
+		Also There is 3 text boxes for more accurate zoom-pan first textbox determines zoom level , second one is x pan last one is y pan.
+		@@gameview.png@@
+		Game view window lets you design your scenes/levels in a visual way. you can Move gameobjects select then change attributes from properties window. all of the actions done here can be undoable or redoable. (CTRL-Z , CTRL-Y)
+		To delete gameobject , select it from gameview or hierarchy window then press Delete key.
+	

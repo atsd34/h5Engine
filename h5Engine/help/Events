@@ -1,0 +1,46 @@
+Events
+	Component Predefined Events
+		A Component code block defines how that component behave on certain events like when component created on screen, or in gameloop etc. There is some predefined events can be used to make reactive component. Also you can define your own events.
+		Predefined Events
+		Events can be defined for a component with this syntax: gm.[COMPONENT NAME].[EVENT NAME] = function ([Arguments if any]){ [Code to do when event occur]  }
+		// Example for TestComponent defining create event;
+		gm.TestComponent = function() { [Default values] }  //Defining component
+		gm.TestComponent.prototype.create = function() { console.log("Test component initialized for "+ this.gameObject.name.value+" gameobject"); }
+			create : Event occurs when component created. And after all other gameobjects in default scene defined. IMPORTANT NOTE : Especially code that require another gameobject should never be in component's define section. All of the initialization logic should be in create event rather than define part.
+			update : This event acts as game loop , it is executed on every frame.
+			dispose : When game object is destroyed every component is destroyed too. Before destroying game object dispose event executed. If you had link to any global variable in component design you have to unlink on dispose event. For example when you create physics object with 3rd party plugin you need to dispose 3rd party physics object in dispose event to prevent inconsistencies.
+			afterCreate : If you need some code block that needs to be executed after "all gameobjects queued to create" created you can use afterCreate event. This is especially important during scene initialization where batch of gameobjects created without any control when you design component.
+			clickMe,mouseDownOnMe,mouseUpOnMe,mouseMoveOnMe  : Mouse Click/ Touch to game object (click also means touch, mouseDown also means touchstart,mouseUp also means touchended,mouseMove also means touchmove ). Gameobject's size , position and parent considered to calculate bounding box. 
+			click,mouseDown,mouseUp,mouseMove : Mouse Click/ Touch on anywhere (click also means touch, mouseDown also means touchstart,mouseUp also means touchended,mouseMove also means touchmove ). This events ignore current gameObjects position.
+		//Example 
+			gm.TestComponent.prototype.mouseMove = function (mouse, event) {
+				/*
+				mouse object has this properties : 
+				left (bool) : is left button
+				right : is right button
+				middle : is middle button
+				x: mouse position x relative to game world 
+				y: mouse position y relative to game world 
+				screenX : mouse position x relative to screen top (as you go to bottom it increases)
+				screenY : mouse position y relative to screen left (as you go to right it increases)		
+				event object is original event created by canvas
+				*/
+			}
+			beginContact,endContact,impact : this events only available if you are using p2.js or box2d physics engine and gameobject have physics body. They executed during physics contact start ,end or any impact.
+
+	Defining your own event.(Advanced)
+			CreateNewComponentEvent function can be used to define new event types to component design. You have to add new event during global execution. (Not in any component design or initialization). Also creating event multiple time may result in multiple execution.
+			FireEventWithArguments(EventName,ArgumentsArray) function can be used to manually fire all defined events.
+
+		//Example
+			//First Line of javascript file.
+			CreateNewComponentEvent("TestEventEverySecond"); // You also create TestEventEverySecondFunctions array 
+			//You need to fire event manually during your custom logic, for easy example we used setInterval.
+			setInterval(function(){
+				FireEventWithArguments("TestEventEverySecond",[new Date()]); // You can inspect box2dHelpers.js for more complex example.
+			},1000);
+			gm.TestComponent = function () {
+			}
+			gm.TestComponent.prototype.TestEventEverySecond= function (dt) {
+				console.log(dt); // This will be fired every second with dt parameter , which is set to current date in event
+			}

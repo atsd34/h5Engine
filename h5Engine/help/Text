@@ -1,0 +1,19 @@
+Text Component
+		PIXI.js offers nice text engine that is also available through h5Engine editor or code. (You can use low level PIXI text)
+		@@text1.png@@
+		All of the properties can be changed in editor or in code to make realtime changes.
+		text : Text to be drawn
+		fontSize : Size of font in h5Units
+		fontFamily : Font-family (if it doesnt exits resets to user's system default). If you add ttf font to your assets it will automatically creates usable font . for example if you add "test.ttf" to assets you can set fontFamily as "testttf"
+		fontStyle : can be set italic,oblique or leave empty (Like html fontStyle)
+		fontWeight : can be set as any boldness (is this a word?) like html fontWeight property
+		fill : Array of color's to set gradient for font's fill value. for single color : ['#ffffff'] , for gradient ['#ffffff','#777799','#555555']
+		stroke : Stroke-line color.
+		strokeThickness : stroke-line thickness in h5Units.
+		wordWrap : if set Word will be wrapped in set h5units width.
+		wordWrapWidth: Maximum word wrap width, if text exceeds this and word wrap is enabled text will be broken in pieces to fit max size.
+		dropShadows : render shadows or not, if this is unchecked below is not needed.
+		dropShadowBlur : shadow blur -fuzziness.
+		dropShadowAngle : shadow's angle to text's center (imagine imaginary line between text and shadow)
+		dropShadowDistance : Shadow's distance to actual text.
+		

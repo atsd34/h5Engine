@@ -1,0 +1,8 @@
+GUI (User Interfaces)
+	Make sprite as GUI
+		Every sprite can be a gui aswell. A gameobject can be made GUI manually by setting its zOrder too high (So it can stay on top of things) and a component to set its position with current camera.
+		There is an easier way to do this; If you check isGuiElement in position's properties. That element is marked as GUI and it is drawn by different static camera on top of normal game camera. This will show new properties in position component.
+		@@GUI1.png@@
+		isGuiElement : Mark element as GUI GUI elements always on top of other gameobjects they have their own zOrder list.
+		rightAligned : GUI's by default is aligned to left side of the game ,if you check this option it will align gameobject's center to mostright position.
+		centerAligned: Align gameobject's center to middle of left and right side.

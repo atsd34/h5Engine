@@ -1,0 +1,50 @@
+GameObjects
+		In h5Engine environment everything represented by a gameobject. And all objects stored in "objects" glabal javascript object which in total makes your scene/level. GameObject is a shell for sum of components with set of values. Every behaviour for gameobject is defined in components.
+	Component
+		Components are generally predefined behaviour patterns that are attached to gameobjects. Components can have their event behaviours custom behaviours or can only shell for variables. There is some components defined by h5Engine which are essential for game to work -like position and name component- that every gameobject has. Also you can define your own components.
+		You can define new component in global variable "gm" . By default components are actually an object designed with "prototype design pattern".
+		See all events that game object can have at @Events@
+		//Example
+		gm.NewComponent = function(){
+			this.var1=0; //Predefined value which can be changed in inspector.
+			this.var2="trtr";		
+		}
+		gm.NewComponent.create=function(){ //When gameobject created all of the components are created aswell, then their create function triggers if it exists.
+			this.var1=5;
+		}
+
+	Predefined functions for gameobjects 
+		When you create a gameobject h5Engine automatically add 4 function for ease of access.
+		[GameObject].remove() : Removes this gameobject and its children from scene.
+		[GameObject].addComponent("name of component",{defaultvalues}) : You can add components from editor but sometimes you need to add component from code, in this case you can use this function.First parameter is name of the component, and second one is default values that need to be set befor initialization.
+		//Example (Assumes you have testGO gameobject in scene with name and position component only)
+		objects.testGO.addComponent("text",{text:"Hello World!",fontSize:24}); // This will add text component with initial values.
+		[GameObject].removeComponent("name of component") : This will remove component from gameobject. Dont try to remove position and name components even if you dont need because they are essentials.
+		//Example (Assumes you have testGO gameobject in scene with name,text and position component only)
+		objects.testGO.removeComponent("text");
+		[GameObject].children() : Returns all children of gameobject defined in gameobject hierarchy.
+
+	Position component
+		The position component is the core of an gameobject stores important information and does most important jobs at background. Most important things that position component is accountable for; actual position in world, rotation, scale , parent-child relationship, isGUI element or not, draw order and game design view represantation.
+		Position,rotation,center : Every game object is placed on world and if there is drawing is involved, it is drawed at position that determined components x and y values. Also when drawing occurs center is calculated using centerx and centery values. this values is between 0-1 where 0 is left for centerx top for centery, 1 is right and bottom. Center is shown with little yellow x in game design view.
+		rotation is degree (between 0-360) which gameobject is rotated around its center point. 
+		//Example (Assumes you have testGO gameobject)
+		objects.testGO.position.x=200; // Set x 200 unit right to center of view;
+		objects.testGO.position.y -=100; // Set y 100 unit upwards
+		objects.testGO.position.rotation=135; //Rotate 135 degree
+		Scale: Gameobjects scale is controlled by 4 property ; width,height,scaleX,scaleY. width and height property determines gameobjects size in units. But sometimes you need proportional scale in that case you can use scaleX and scaleY (defaults are 1)
+		//Example (Assumes you have testGO gameobject)
+		{
+		objects.testGO.addComponent("text",{text:"Hello World!"}); // Add text
+		objects.testGO.text.fontSize=24; //Setting fontSize automatically calculates width and height. (Width : 149, Height:36)
+		objects.testGO.position.width = 75; // Stretches text to fit 75 unit horizantally.
+		objects.testGO.position.height = 18; // Stretches text to fit 18 unit vertically.
+		objects.testGO.text.fontSize=30; //Setting fontSize automatically calculates width and height. (Width : 185, Height:41)
+		objects.testGO.position.scaleX = 0.5; // Stretches text to fit 92.5 unit horizantally.
+		objects.testGO.position.scaleY = 0.5; // Stretches text to fit 20.5 unit vertically.
+		objects.testGO.text.fontSize=24; //Setting fontSize automatically calculates width and height. (Width : 149, Height:36 ,but actual Width :74.5,Actual Height :18)
+		}
+		Draw Order: zOrder property is used to calculate drawQueue. smallest zOrder drawn first and others drawn onto it. Highest zOrder always shown entirely (if it is in current camera view)
+		Parent : By default gameobjects are parentless, but if you define parent for a gameobject parent's position component will influence child position. (Position x-y values, rotation and scale will have effect on children) Also parent-child relation is represented in game hierarchy window.
+		IsGUI: If you mark an object as gui you can align gameobject to visible scene easier. And camera movements wont have any effect on gameobjects relative position on screen.
+		Game Design representation: When a game object is drawn on game design view its position component decides/ calculates actual place on screen with all information on position component has. 

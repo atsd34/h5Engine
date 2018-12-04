@@ -1,0 +1,22 @@
+Sound
+	Creating sound
+		Sound component can be added to any gameobject. Then you can choose sound asset (mp3,wav ogg etc.) from project assets. With default values this will create background music. You can change behavior with options;
+		path : Path of sound asset. This will be played when triggered.
+		autoPlay : If checked sound will be played as soon as gameobject created.
+		Loop : If checked sound will play indefinetely (or until stopped by code).
+		volume : Volume setting for sound effect/music.
+		Playback Button : playback sound to check it.
+	Coding
+		Apart from inspector values, you can control sound from code with this properties.(Also you can change properties above.)
+		function Play() : Play sound with current settings.
+		function Stop() : Stop playing sound.
+		onFinish : Array of functions will be executed after playing sound is over or stopped.
+
+		//Example assumes you have "test.mp3" asset and GameObject0 has Sound component.
+		objects.GameObject0.Sound.path= "test.mp3" ; //Set sound file
+		objects.GameObject0.Sound.Loop=false; // We only play it once
+		objects.GameObject0.Sound.volume=50; //with half volume
+		objects.GameObject0.Sound.onFinish.push(function(){
+			console.log("test.mp3 played");
+		});
+		objects.GameObject0.Sound.Play(); //This will play "test.mp3" once then when it finishes logs "test.mp3 played"

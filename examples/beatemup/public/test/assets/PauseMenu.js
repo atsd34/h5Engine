@@ -1,0 +1,1 @@
+gm.PauseMenu=function(){},gm.PauseMenu.prototype.create=function(){},gm.PauseMenu.prototype.update=function(e){16*camera.scale!=this.gameObject.text.fontSize&&(this.gameObject.text.fontSize=16*camera.scale)},gm.PauseMenu.prototype.dispose=function(){},gm.PauseMenu.prototype.clickMe=function(){delete localStorage.gameEngineStatesAutoSave,loadScene(currentSceneName)};

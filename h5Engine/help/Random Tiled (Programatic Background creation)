@@ -1,0 +1,14 @@
+Random Tiled
+	Background creation
+		h5Engine offers a "different" way to create tiled maps. You can create tiled maps in seconds with this way that is always consistent (if you made sheet according to this)
+		To create programatic background; select spritesheet image as "path" variable in sprite component , check "randomTiled" box. This will open new options. Also change desired width and height from position component. 
+		sheetTileWidth,sheetTileHeight : this is where one piece of tile size is set. This value also sets how many tiles vertically and horizantally will be placed by calculating with position's width and height value (If you need scaling use scaleX and scaleY values)
+		sheetTileSpacing : Actual image may have spacing between tiles this is where it is set (in pixels).
+		Add New Random Tile Button: Click this to add new tile rule
+		0 Sprite Number: In this rule which tiles will be used placed here. If you want single sprite just enter number. If you need more than one tile placed randomly chosen write them comma seperated.
+		0 X Range: start and end of tiles . Think your background as a grid that has 10 tile placed horizantally . 0 represents most left 9 represents most right. if you put 0 5 here it will place 6 tile at the left
+		0 Y Range: start and end of tiles . Think your background as a grid that has 10 tile placed vertically . 0 represents most top 9 represents most bottom. if you put 0 2 here it will place 3 tile at the top
+		0 Shift Data : A JSON data that moves tileset vertically. 
+		{"a[FirstTile]_[LastTileForRule]":{"h":[shift amount in pixels] }
+
+		@@randomtiled.png@@

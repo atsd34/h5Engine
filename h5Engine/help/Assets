@@ -1,0 +1,16 @@
+Assets Window
+		Assets are simply project files and their folder structure. You can double click on assets to execute their special function. These Are;
+		- Folder : Expand-Collapse
+		- Prefab : Add to current scene
+		- Scene : Open Scene
+		- Javascript / Js file : Quick edit Javascript editor.
+		- Animation : Open paper animation window
+		- Images : ONLY WHEN Paper animation window is opened ; it will add image as last item (More info on animation editor.)
+		This Window contains following features.
+		- Filter by Type : You can select most used types among all asset types for better workflow esspecially when you have too many unorganized assets. 
+		- Rename : If you select an asset then press f2 you can rename any asset (Dont change extension if you dont intend to)
+		- Create empty folder : Create new empty folder in asset folder hierarchy
+		- Open File : To add assets from your computer; Click Open file button select file(s) then "Open"
+		- New Animation : Creates new empty animation file.
+		- Prefab Painter : Opens Prefab painter window for easier level editing.
+		- New Script Object : Creates new script object with default functionality to create new component.

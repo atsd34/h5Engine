@@ -1,0 +1,32 @@
+Sprite Animation (Spritesheet animation)
+	Creating animation
+		Start with new sprite , then as path select spritesheet that you had prepared in your favorite paint tool. Then check "spriteSheet" checkBox in sprite component. This will open new options;
+		sheetTileWidth,sheetTileHeight: Original image will be splitted in smaller pieces by using this values. Think as a grid is put top of your image and every grid is acted as seperate image ( or in this case animation frame) and images will be numbered as 0,1,2... from left to right then top to bottom.
+		Animations; animations are also stored as zero indexed array. You can add infinite amount of animation .
+		X animation Name: (X Number) Every animation must have name so you can access from code to play, stop. If animation name is "default" then when gameobject created it will start looping that animation.
+		X Button (Delete) : There is a X button next to name textbox that removes animation from sprite data.
+		X animation FPS: Every animation has its own FPS (Frames Per Second) and set here.
+		X animation sequence: This is what transforms static sprite into animated sprite. Enter comma seperated animation sequence to make animation. For example ; 0,1,2,2,1,0,0,0
+		Add New Animation Button : Creates new animation data.
+		@@spriteanim0.png@@
+		Creates
+		@@spriteanim1.gif@@
+	Coding
+		Animation offers these functions/variables ;
+		function [gameObject].sprite.loopAnim([animation name]) : starts to loop animation immediatly. Animation name is set in editor ("default" , "walk" are examples above)
+		[gameObject].sprite.currentAnim : is object that stores information dont change values if you are not making low level alterations.
+			name: name of current animation, if nothing is playing it will be undefined.
+			frame : Frame of current animation.
+			loop : is animation looping
+			func : When current animation ends this function will be executed.
+		function [gameObject].sprite.playOnceAnim([animation name],callbackfunction) : Plays named animation once then executes callbackfunction if set (can be empty)
+		[gameObject].sprite.sprite : We already mentioned this on standart sprite but you can access pixi sprite through this. So you can code low level stuff or functionality that PIXI offers. 
+		//Example assumes You have GameObject0 that has settings like above pictures.
+		objects.GameObject0.sprite.playOnceAnim("walk",function(){ //plays walk once then loops default animation
+			objects.GameObject0.sprite.loopAnim("default");
+		});
+		console.log(objects.GameObject0.sprite.sprite.playing); // logs true
+		console.log(objects.GameObject0.sprite.currentAnim.name); // logs "walk";
+		var tmr=setTimeout(function(){
+		console.log(objects.GameObject0.sprite.currentAnim.name); // logs "default" after 1 second;
+		},1000);

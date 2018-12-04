@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery-3.2.1.js"></script>
+    <script src="pixi.min.js"></script>
+    <script src="p2.min.js"></script>
+    <script src="libs/contextMenu.min.js"></script>
+    <link href="libs/contextMenu.min.css" rel="stylesheet" />
+    <script src="socketOn.js"></script>
+    <script src="libs/js/bootstrap.js"></script>
+    <link href="libs/css/bootstrap.css" rel="stylesheet" />
+    <script src="libs/js/goldenlayout.min.js"></script>
+    <link href="libs/css/goldenlayout-base.css" rel="stylesheet" />
+    <link href="libs/css/goldenlayout-dark-theme.css" rel="stylesheet" />
+    <script src="libs/js/tree.jquery.js"></script>
+    <link href="libs/css/jqtree.css" rel="stylesheet" />
+    <script src="socket.io.js"></script>
+    <script src="gamedesign.js"></script>
+    <script src="gameassets.js"></script>
+    <script src="properties.js"></script>
+    <script src="index.js"></script>
+    <script src="gamehierarchy.js"></script>
+    <script src="Menu.js"></script>
+    <script src="assetTypes.js"></script>
+    <script src="AnimationEditor.js"></script>
+    <script src="libs/jquery-ui.js"></script>
+    <link href="libs/jquery-ui.css" rel="stylesheet" />
+    <script src="PrefabPainter.js"></script>
+    <script src="GameSettings.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.6.14/beautify.js"></script>
+    <style>
+        input[type="search"]::-webkit-search-cancel-button {
+            -webkit-appearance: searchfield-cancel-button;
+        }
+    </style>
+    <style>
+        ol .ui-selecting {
+            background: #FECA40;
+        }
+
+        ol .ui-selected {
+            background: #F39814;
+            color: white;
+        }
+
+        ol.prefabPainter {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+            ol.prefabPainter li {
+                margin: 3px;
+                padding: 1px;
+                float: left;
+                width: 130px;
+                height: 150px;
+                color: white;
+                text-align: center;
+            }
+
+        .diff .diff-left {
+            width: 49%;
+            display: inline-block;
+        }
+
+        .diff .diff-right {
+            width: 49%;
+            display: inline-block;
+        }
+        .diff .equal {
+            border-bottom: solid 1px #cccccc;
+        }
+        .diff .empty {
+            background-color:#ff9999;
+            border-bottom: solid 1px #cccccc;
+        }
+        .diff li {
+            height: 20px;
+            white-space: nowrap;
+        }
+        .diff .insert {
+            background-color: #99ff99;
+            border-bottom: solid 1px #cccccc;
+        }
+        .diff .replace {
+            background-color: #bbeeff;
+            border-bottom: solid 1px #cccccc;
+        }
+        .diff .count {
+            display: none;
+        }
+    </style>
+
+    <style>
+        body .lm_content {
+            overflow: auto;
+        }
+
+        #sortable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            #sortable li {
+                margin: 3px 3px 3px 0;
+                padding: 1px;
+                float: left;
+                width: 100px;
+                height: 120px;
+                font-size: 4em;
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12 dvMenu">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 dvEngine"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 dvConsole" style="height:24px;background-color:black;color:red"></div>
+    </div>
+</body>
+</html>

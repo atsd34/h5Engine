@@ -1,0 +1,22 @@
+Plugin Management
+		h5Engine offers plugin sysytem to quickly share your codes/assets/functionality to others or saving functionality to reuse in different projects.
+	Creating Plugin
+		While you work on you current work , some functionalies may be usefull for later use.Note that, plugins stored in different system so plugins cause no overhead to current project. Also if you change any part of plugin other projects wont be affected. To Include new changes you have to reimport.
+		You can save plugin by TOP Menu->Save Plugin this will open new popup window. First information needed to create is Existing plugin name; If you choose "New" then you create plugin from scratch. If you choose existing plugin then Plugin name automatically fills and existing assets will be checked. 
+		Plugin Name: Every plugin have their unique name If you are creating new plugin you need unique name if you are trying to overwrite plugin you will give existing plugin's name.
+		Included Assets : The plugin functionality will be derived from your current assets. You need to check a group of assets that define some functionality. When you design your project always keep in mind every asset should serve only one purpose so if you need to create plugin you wont need any extra work to seperate functionality.
+		When you click save, if it is a new plugin it is done you created your first plugin. When you are trying to change existing plugin new popup window will be shown to summarize changes. 
+			There is 3 groups here, Changes: Assets that will be saved and are different from existing plugin. If it is code file then you can click asset to compare versions.
+			Added files : Assets that werent present in previous version and will be added to plugin.
+			Removed Files : Assets that were present in previous version and will not be included in final version.
+		After you check all changes and you are happy with new changes Click "Overwrite/Save" to overwrite plugin.
+	Importing Plugin to project.
+		When you create new project you can choose starting plugins. After you created project you can always add new plugins to project by TOP Menu-> Import Plugin to Project. This will open basic popup that shows existing plugins you need to check plugins that you want to add current project then click on "Import" .
+		NOTE: If your plugin have assets that are already in project that files will be overwritten without prompt. 
+	Exporting Plugin 
+		When you made a great plugin that you are proud to share with others or any other reason you can export plugin to file system. TOP Menu->Export Plugin to File creates a file that can be shared with others.
+	Importing Other Plugins to System
+		If you have any plugin in file systemyou can import bu TOP Menu -> Import Plugin From file. Just Select plugin file and change name if you want then import.
+	Deleting Plugins from system
+		If you have too much plugin and want to clean a bit, you can delete any plugin from TOP Menu -> Save Plugin , select plugin you wish to exclude then Click "Delete Selected Plugin".
+		NOTE: Plugin files arent really deleted from hard drive if you accidentally delete plugin you can reimport from [h5Engine Folder]\plugins folder.

@@ -1,0 +1,63 @@
+New Editor Window (Advanced)
+	Creating new Editor
+		When custom editor for properties is not enough or you need generic editor windows for new purposes or to automatate your workflow, you can create new editor window that can do anything javascript and h5Engine can (I mean anything)
+		Prenote: h5Engine uses GoldenLayout for its window system. Thanks for great framework. For more advanced operations you can always check @https://golden-layout.com/@ GoldenLayout site for its capabilities and further needs.
+		h5Engine provides 4 functions for most frequently used functions. (But you can use goldenlayout native functions to extend these)
+		function CreateNewWindow(Title, elementName) : This Function is used to create new Window and returns jquery element where you can put your controls. If window already exists it will just return jquery element.
+		function activateByTitle(Title) : If Window is set as a tab element (probably by user) this function activates and focuses tab.
+		function FindTabByTitle(Title) : This function will return goldenlayout element (Tab Element) of window for further customization.
+		function FindStackByTitle(Title) :This function will return goldenlayout element (Stack Element) of window for further customization.
+	Example;
+		Result:
+		@@newwindow.png@@
+		//Example Assumes we have a game object named "GameObject0" 
+		// Not a usefull window(but simple and educative) that changes GameObject0's position x value and changes to gameobject is shown on window. Also used advanced techniques to prompt confirmation during closing window
+		function CreateTestWindow() {
+			var $el = CreateNewWindow("Test Window", "dvTestWndw"); // Creates new window if is not present 
+			// if we used CreateNewWindow("Test Window"); it would create element with name "TestWindow"; 
+			$el[0].style = "padding:10px 10px 10px 10px;color:white"; //You can use DOM operations or jquery operations on element 
+			$el.append("<span>GameObject0 x position ?</span>");
+			var input = $("<input type='number' style='color:black'/>").appendTo($el); //creates new textbox inside our window; 
+			input.val(objects.GameObject0.position.x); // Puts gameobject's position.x value to textbox 
+			input.on("change", function () { //changes to textbox 
+				var x = parseFloat(input.val());
+				if (!isNaN(x)) { //if its a number set otherwise we dont want to break things				
+					objects.GameObject0.position.x = x;
+					CommitValue(objects.GameObject0, "position", "x");
+				} else {
+					input.val(objects.GameObject0.position.x);
+				}
+			});
+			newObservable(objects.GameObject0.position, "x", undefined, function () { //Changes to actual gameobject value 
+				var currentX = parseFloat(input.val());
+				if (objects.GameObject0.position.x != currentX)
+					input.val(objects.GameObject0.position.x);
+			});
+			var tab = FindTabByTitle("Test Window"); //WARNING; when you move window it is created again so you need to recall this one with goldenlayout API
+			var stack = FindStackByTitle("Test Window");
+			tab.closeElement
+				.off('click') //unbind the current click handler
+				.click(function () { //tab close
+					if (confirm('Do you want to close tab?')) {
+						tab.contentItem.remove();
+					}
+				});
+			stack.header.controlsContainer
+				.find('.lm_close') //get the close icon
+				.off('click') //unbind the current click handler
+				.click(function () {
+					if (confirm('Do you want to close stack that contains Test Window?')) {
+						stack.remove();
+					}
+				});
+		}
+		editorLoadComplete.push(function () { //make sure editor is loaded 
+			if ($("#dvTestWndw").length > 0) // if window is open from previous session (Every window state is automatically saved 
+				CreateTestWindow();
+			addMenu("Test Window", function () { //Add to top menu 
+				if ($("#dvTestWndw").length > 0)
+					$("#dvTestWndw").html(''); //Clear Inside 
+				CreateTestWindow();
+				activateByTitle("Test Window"); //If it is in tab activate tab 
+			}, "", undefined, "btnTestWindow");
+		});

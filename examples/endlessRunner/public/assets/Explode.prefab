@@ -1,0 +1,720 @@
+[
+  {
+    "name"
+      : {
+      "value": "PrefabGameObject0",
+      "tagName": "Explode"
+    },
+    "sprite": {
+      "path": "",
+      "AnimationSpeed": 0.5,
+      "isTileMap": false,
+      "tileWidth": 32,
+      "tileHeight": 32,
+      "tilesNum": []
+    },
+    "position": {
+      "isGuiElement": false,
+      "rightAligned": false,
+      "centerAligned": false,
+      "parent": "",
+      "x": 0,
+      "y": 0,
+      "zOrder": 0,
+      "width": 32,
+      "height": 32,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "centerx": 0.5,
+      "centery": 0.5,
+      "dragging": false,
+      "prefabName": "Explode"
+    }
+  },
+  {
+    "name": {
+      "value": "PrefabGameObject1",
+      "tagName": ""
+    },
+    "sprite": {
+      "path": "mainsprites\\piece1.png",
+      "AnimationSpeed": 0.5,
+      "isTileMap": false,
+      "tileWidth": 32,
+      "tileHeight": 32,
+      "tilesNum": []
+    },
+    "position": {
+      "isGuiElement": false,
+      "rightAligned": false,
+      "centerAligned": false,
+      "parent": "PrefabGameObject0",
+      "x": -29.302536231884105,
+      "y": -21.2862318840579,
+      "zOrder": 0,
+      "width": 79,
+      "height": 84,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "centerx": 0.5,
+      "centery": 0.5,
+      "dragging": false,
+      "prefabName": ""
+    },
+    "Physics": {
+      "isLiquid": false,
+      "maxParticleInOneFrame": 50,
+      "particleRadius": 5,
+      "particleType": 0,
+      "particleImage": "",
+      "particleImageShadow": 5,
+      "particleImageWidth": 16,
+      "debugDraw": false,
+      "fillColor": "FFFFFF",
+      "lineColor": "000000",
+      "colliderType": "concave",
+      "radius": 1,
+      "width": 79,
+      "height": 84,
+      "damping": 0.1,
+      "friction": 0,
+      "restitution": 0,
+      "density": 5,
+      "preX": 0,
+      "preY": 0,
+      "preRot": 0,
+      "static": false,
+      "isSensor": false,
+      "isBullet": false,
+      "fixedRotation": false,
+      "angle": 0,
+      "vertices": [
+        {
+          "x": -42,
+          "y": -20
+        },
+        {
+          "x": -18,
+          "y": -36
+        },
+        {
+          "x": -10,
+          "y": -12
+        },
+        {
+          "x": 13,
+          "y": -24
+        },
+        {
+          "x": 5,
+          "y": -42
+        },
+        {
+          "x": 28,
+          "y": -41
+        },
+        {
+          "x": 24,
+          "y": -26
+        },
+        {
+          "x": 27,
+          "y": 4
+        },
+        {
+          "x": 38,
+          "y": 7
+        },
+        {
+          "x": 26,
+          "y": 28
+        },
+        {
+          "x": 12,
+          "y": 35
+        },
+        {
+          "x": 1,
+          "y": 42,
+          "c": 65280
+        },
+        {
+          "x": -3,
+          "y": 30
+        },
+        {
+          "x": -27,
+          "y": 19
+        },
+        {
+          "x": -18,
+          "y": -6
+        },
+        {
+          "x": -24,
+          "y": -18
+        }
+      ]
+    }
+  },
+  {
+    "name": {
+      "value": "PrefabGameObject2",
+      "tagName": ""
+    },
+    "sprite": {
+      "path": "mainsprites\\piece2.png",
+      "AnimationSpeed": 0.5,
+      "isTileMap": false,
+      "tileWidth": 32,
+      "tileHeight": 32,
+      "tilesNum": []
+    },
+    "position": {
+      "isGuiElement": false,
+      "rightAligned": false,
+      "centerAligned": false,
+      "parent": "PrefabGameObject0",
+      "x": 27.626811594202927,
+      "y": -16.123188405797084,
+      "zOrder": 0,
+      "width": 73,
+      "height": 81,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "centerx": 0.5,
+      "centery": 0.5,
+      "dragging": false,
+      "prefabName": ""
+    },
+    "Physics": {
+      "isLiquid": false,
+      "maxParticleInOneFrame": 50,
+      "particleRadius": 5,
+      "particleType": 0,
+      "particleImage": "",
+      "particleImageShadow": 5,
+      "particleImageWidth": 16,
+      "debugDraw": false,
+      "fillColor": "FFFFFF",
+      "lineColor": "000000",
+      "colliderType": "concave",
+      "radius": 1,
+      "width": 73,
+      "height": 81,
+      "damping": 0.1,
+      "friction": 0,
+      "restitution": 0,
+      "density": 5,
+      "preX": 0,
+      "preY": 0,
+      "preRot": 0,
+      "static": false,
+      "isSensor": false,
+      "isBullet": false,
+      "fixedRotation": false,
+      "angle": 0,
+      "vertices": [
+        {
+          "x": -16,
+          "y": -35
+        },
+        {
+          "x": 0,
+          "y": -32
+        },
+        {
+          "x": 36,
+          "y": -37
+        },
+        {
+          "x": 19,
+          "y": -18
+        },
+        {
+          "x": 16,
+          "y": 12
+        },
+        {
+          "x": 4,
+          "y": 34
+        },
+        {
+          "x": -21,
+          "y": 31
+        },
+        {
+          "x": -36,
+          "y": 17
+        },
+        {
+          "x": -30,
+          "y": -5
+        },
+        {
+          "x": -34,
+          "y": -18,
+          "c": 65280
+        }
+      ]
+    }
+  },
+  {
+    "name": {
+      "value": "PrefabGameObject3",
+      "tagName": ""
+    },
+    "sprite": {
+      "path": "mainsprites\\piece3.png",
+      "AnimationSpeed": 0.5,
+      "isTileMap": false,
+      "tileWidth": 32,
+      "tileHeight": 32,
+      "tilesNum": []
+    },
+    "position": {
+      "isGuiElement": false,
+      "rightAligned": false,
+      "centerAligned": false,
+      "parent": "PrefabGameObject0",
+      "x": 23.777173913043413,
+      "y": 27.717391304347732,
+      "zOrder": 0,
+      "width": 69,
+      "height": 69,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "centerx": 0.5,
+      "centery": 0.5,
+      "dragging": false,
+      "prefabName": ""
+    },
+    "Physics": {
+      "isLiquid": false,
+      "maxParticleInOneFrame": 50,
+      "particleRadius": 5,
+      "particleType": 0,
+      "particleImage": "",
+      "particleImageShadow": 5,
+      "particleImageWidth": 16,
+      "debugDraw": false,
+      "fillColor": "FFFFFF",
+      "lineColor": "000000",
+      "colliderType": "polygon",
+      "radius": 1,
+      "width": 69,
+      "height": 69,
+      "damping": 0.1,
+      "friction": 0,
+      "restitution": 0,
+      "density": 5,
+      "preX": 0,
+      "preY": 0,
+      "preRot": 0,
+      "static": false,
+      "isSensor": false,
+      "isBullet": false,
+      "fixedRotation": false,
+      "angle": 0,
+      "vertices": [
+        {
+          "x": -13,
+          "y": -32
+        },
+        {
+          "x": -4,
+          "y": -33
+        },
+        {
+          "x": -3,
+          "y": -13
+        },
+        {
+          "x": 26,
+          "y": -19
+        },
+        {
+          "x": 33,
+          "y": 9
+        },
+        {
+          "x": -4,
+          "y": 32
+        },
+        {
+          "x": -29,
+          "y": 31
+        },
+        {
+          "x": -32,
+          "y": 0
+        },
+        {
+          "x": -13,
+          "y": -11,
+          "c": 65280
+        }
+      ]
+    }
+  },
+  {
+    "name": {
+      "value": "PrefabGameObject4",
+      "tagName": ""
+    },
+    "sprite": {
+      "path": "mainsprites\\piece4.png",
+      "AnimationSpeed": 0.5,
+      "isTileMap": false,
+      "tileWidth": 32,
+      "tileHeight": 32,
+      "tilesNum": []
+    },
+    "position": {
+      "isGuiElement": false,
+      "rightAligned": false,
+      "centerAligned": false,
+      "parent": "PrefabGameObject0",
+      "x": -36.096014492753525,
+      "y": 29.80072463768125,
+      "zOrder": 0,
+      "width": 84,
+      "height": 71,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "centerx": 0.5,
+      "centery": 0.5,
+      "dragging": false,
+      "prefabName": ""
+    },
+    "Physics": {
+      "isLiquid": false,
+      "maxParticleInOneFrame": 50,
+      "particleRadius": 5,
+      "particleType": 0,
+      "particleImage": "",
+      "particleImageShadow": 5,
+      "particleImageWidth": 16,
+      "debugDraw": false,
+      "fillColor": "FFFFFF",
+      "lineColor": "000000",
+      "colliderType": "concave",
+      "radius": 1,
+      "width": 84,
+      "height": 71,
+      "damping": 0.1,
+      "friction": 0,
+      "restitution": 0,
+      "density": 5,
+      "preX": 0,
+      "preY": 0,
+      "preRot": 0,
+      "static": false,
+      "isSensor": false,
+      "isBullet": false,
+      "fixedRotation": false,
+      "angle": 0,
+      "vertices": [
+        {
+          "x": -23,
+          "y": -22
+        },
+        {
+          "x": 29,
+          "y": -33
+        },
+        {
+          "x": 39,
+          "y": 2
+        },
+        {
+          "x": 25,
+          "y": 35
+        },
+        {
+          "x": 0,
+          "y": 25,
+          "c": 65280
+        },
+        {
+          "x": -21,
+          "y": -3
+        },
+        {
+          "x": -38,
+          "y": 7
+        },
+        {
+          "x": -40,
+          "y": -3
+        }
+      ]
+    }
+  },
+  {
+    "name": {
+      "value": "PrefabGameObject5",
+      "tagName": ""
+    },
+    "sprite": {
+      "path": "mainsprites\\legpiece.png",
+      "AnimationSpeed": 0.5,
+      "isTileMap": false,
+      "tileWidth": 32,
+      "tileHeight": 32,
+      "tilesNum": []
+    },
+    "position": {
+      "isGuiElement": false,
+      "rightAligned": false,
+      "centerAligned": false,
+      "parent": "PrefabGameObject0",
+      "x": -23.55072463768118,
+      "y": 53.80434782608693,
+      "zOrder": 0,
+      "width": 33,
+      "height": 52,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "centerx": 0.5,
+      "centery": 0.5,
+      "dragging": false,
+      "prefabName": ""
+    },
+    "Physics": {
+      "isLiquid": false,
+      "maxParticleInOneFrame": 50,
+      "particleRadius": 5,
+      "particleType": 0,
+      "particleImage": "",
+      "particleImageShadow": 5,
+      "particleImageWidth": 16,
+      "debugDraw": false,
+      "fillColor": "FFFFFF",
+      "lineColor": "000000",
+      "colliderType": "concave",
+      "radius": 1,
+      "width": 33,
+      "height": 52,
+      "damping": 0.1,
+      "friction": 0,
+      "restitution": 0,
+      "density": 5,
+      "preX": 0,
+      "preY": 0,
+      "preRot": 0,
+      "static": false,
+      "isSensor": false,
+      "isBullet": false,
+      "fixedRotation": false,
+      "angle": 0,
+      "vertices": [
+        {
+          "x": -13,
+          "y": -6,
+          "c": 65280
+        },
+        {
+          "x": -6,
+          "y": -11
+        },
+        {
+          "x": -8,
+          "y": -24
+        },
+        {
+          "x": 3,
+          "y": -23
+        },
+        {
+          "x": 2,
+          "y": -8
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 14,
+          "y": 24
+        },
+        {
+          "x": -15,
+          "y": 25
+        }
+      ]
+    }
+  },
+  {
+    "name": {
+      "value": "PrefabGameObject6",
+      "tagName": ""
+    },
+    "sprite": {
+      "path": "mainsprites\\legpiece.png",
+      "AnimationSpeed": 0.5,
+      "isTileMap": false,
+      "tileWidth": 32,
+      "tileHeight": 32,
+      "tilesNum": []
+    },
+    "position": {
+      "isGuiElement": false,
+      "rightAligned": false,
+      "centerAligned": false,
+      "parent": "PrefabGameObject0",
+      "x": 22.826086956521717,
+      "y": 54.66485507246372,
+      "zOrder": 0,
+      "width": 33,
+      "height": 52,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "centerx": 0.5,
+      "centery": 0.5,
+      "dragging": false,
+      "prefabName": ""
+    },
+    "Physics": {
+      "isLiquid": false,
+      "maxParticleInOneFrame": 50,
+      "particleRadius": 5,
+      "particleType": 0,
+      "particleImage": "",
+      "particleImageShadow": 5,
+      "particleImageWidth": 16,
+      "debugDraw": false,
+      "fillColor": "FFFFFF",
+      "lineColor": "000000",
+      "colliderType": "concave",
+      "radius": 1,
+      "width": 33,
+      "height": 52,
+      "damping": 0.1,
+      "friction": 0,
+      "restitution": 0,
+      "density": 5,
+      "preX": 0,
+      "preY": 0,
+      "preRot": 0,
+      "static": false,
+      "isSensor": false,
+      "isBullet": false,
+      "fixedRotation": false,
+      "angle": 0,
+      "vertices": [
+        {
+          "x": -11,
+          "y": -7
+        },
+        {
+          "x": -6,
+          "y": -24
+        },
+        {
+          "x": 1,
+          "y": -22
+        },
+        {
+          "x": 1,
+          "y": -10
+        },
+        {
+          "x": 6,
+          "y": 12,
+          "c": 65280
+        },
+        {
+          "x": 13,
+          "y": 25
+        },
+        {
+          "x": -14,
+          "y": 23
+        }
+      ]
+    }
+  },
+  {
+    "name": {
+      "value": "PrefabGameObject7",
+      "tagName": ""
+    },
+    "sprite": {
+      "path": "",
+      "AnimationSpeed": 0.5,
+      "isTileMap": false,
+      "tileWidth": 32,
+      "tileHeight": 32,
+      "tilesNum": []
+    },
+    "position": {
+      "isGuiElement": false,
+      "rightAligned": false,
+      "centerAligned": false,
+      "parent": "PrefabGameObject0",
+      "x": -2.1739130434782594,
+      "y": 3.9855072463768093,
+      "zOrder": 0,
+      "width": 32,
+      "height": 32,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "centerx": 0.5,
+      "centery": 0.5,
+      "dragging": false,
+      "prefabName": ""
+    },
+    "Physics": {
+      "isLiquid": true,
+      "maxParticleInOneFrame": 50,
+      "particleRadius": 4,
+      "particleType": 0,
+      "particleImage": "mainsprites\\blood.png",
+      "particleImageShadow": 5,
+      "particleImageWidth": 12,
+      "debugDraw": false,
+      "fillColor": "FFFFFF",
+      "lineColor": "000000",
+      "colliderType": "circle",
+      "radius": 54,
+      "width": 32,
+      "height": 32,
+      "damping": 0.1,
+      "friction": 0,
+      "restitution": 0,
+      "density": 5,
+      "preX": 0,
+      "preY": 0,
+      "preRot": 0,
+      "static": false,
+      "isSensor": false,
+      "isBullet": false,
+      "fixedRotation": false,
+      "angle": 0,
+      "vertices": [
+        {
+          "x": -50,
+          "y": -50
+        },
+        {
+          "x": 50,
+          "y": -50,
+          "c": 65280
+        },
+        {
+          "x": 0,
+          "y": 50
+        }
+      ]
+    }
+  }
+]

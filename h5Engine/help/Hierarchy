@@ -1,0 +1,5 @@
+Hierarchy Window
+		This window contains 3 simple feature
+		- New Game Object : Creates New Empty Game Object with 3 component name,position and sprite. Name and Position are essentials so you cannot remove these components without spoiling engine. And sprite is most used component.
+		- Hierarchy view/change : All your game objects in current state lists in hierarchy tree. You can move any game object to change its parent- or break parent. NOTE : You can filter game objects by entering text on filter area, It will also show filtered Gameobject's children /and parent
+		- Selecting Game object : To select any game object simply click on it. When you select game object then you can rename by pressing F2 (It  will simply focus name area on properties). Or you can press DEL to delete any gameobject and its children.

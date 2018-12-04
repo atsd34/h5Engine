@@ -1,0 +1,5 @@
+Paper Animation Window
+		You can access paper animation by, creating new animation from "New Animation" button in assets window then double click .anim file. 
+		To add new frames double click on any image in assets window. You can add same image indefinetly to change relative length (Animation speed can be changed from gameobject sprite component. More info on sprite component API)
+		In animation window you can delete frames by clicking on "X" button or rearrange by dragging frames.
+		NOTE: Paper animation is not recommended animation you should use sprite animation where it is suitable. (More info on sprite component)

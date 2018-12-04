@@ -1,0 +1,247 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>NodejsWebApp2</Name>
+    <RootNamespace>NodejsWebApp2</RootNamespace>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d18ef94c-e3a8-441f-8fc0-7453f32abfaf</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>server.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="public\GameSettings.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="public\AnimationEditor.js" />
+    <Compile Include="public\assetTypes.js" />
+    <Compile Include="public\export.js" />
+    <Compile Include="public\gameassets.js" />
+    <Compile Include="public\gamehierarchy.js" />
+    <Compile Include="public\gamepreview.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="public\help\help.js" />
+    <Compile Include="public\index.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="public\jquery-3.2.1.js" />
+    <Compile Include="public\libs\contextMenu.min.js" />
+    <Compile Include="public\libs\jquery-ui.js" />
+    <Compile Include="public\libs\js\bootstrap.js" />
+    <Compile Include="public\libs\js\bootstrap.min.js" />
+    <Compile Include="public\libs\js\goldenlayout.js" />
+    <Compile Include="public\libs\js\goldenlayout.min.js" />
+    <Compile Include="public\libs\js\npm.js" />
+    <Compile Include="public\libs\js\tree.jquery.js" />
+    <Compile Include="public\Menu.js" />
+    <Compile Include="public\properties.js" />
+    <Compile Include="server.js" />
+    <Content Include="help\About Me" />
+    <Content Include="help\Assets" />
+    <Content Include="help\Camera" />
+    <Content Include="help\Constraints" />
+    <Content Include="help\Events" />
+    <Content Include="help\Custom Editor for properties" />
+    <Content Include="help\FAQ" />
+    <Content Include="help\Game Object" />
+    <Content Include="help\Game View" />
+    <Content Include="help\Getting Started" />
+    <Content Include="help\GUI" />
+    <Content Include="help\Hierarchy" />
+    <Content Include="help\Index.txt" />
+    <Content Include="help\Liquid" />
+    <Content Include="help\Menu" />
+    <Content Include="help\New Editor Window" />
+    <Content Include="help\New Menu" />
+    <Content Include="help\Object Animation" />
+    <Content Include="help\Painter %28overriding default actions%29" />
+    <Content Include="help\Paper Animation Editor" />
+    <Content Include="help\Paperbook animation" />
+    <Content Include="help\Particles" />
+    <Content Include="help\Physics" />
+    <Content Include="help\Physics Object" />
+    <Content Include="help\Plugin Management" />
+    <Content Include="help\Prefab Painter" />
+    <Content Include="help\Prefabs" />
+    <Content Include="help\Properties" />
+    <Content Include="help\Quick tour" />
+    <Content Include="help\Random Tiled %28Programatic Background creation%29" />
+    <Content Include="help\Scene Management" />
+    <Content Include="help\Script Editor" />
+    <Content Include="help\Sound" />
+    <Content Include="help\Sprite Animation" />
+    <Content Include="help\Standart Sprite" />
+    <Content Include="help\Text" />
+    <Content Include="help\Tutorials" />
+    <Content Include="help\Visual Studio Integration" />
+    <Content Include="help\Work Area" />
+    <Content Include="public\ace.html" />
+    <Content Include="public\assetTypes" />
+    <Content Include="public\export.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="package.json" />
+    <Content Include="public\gamedesign.js" />
+    <Content Include="public\help\Gameview.png" />
+    <Content Include="public\help\GUI1.png" />
+    <Content Include="public\help\help.html" />
+    <Content Include="public\help\javascript.png" />
+    <Content Include="public\help\liquid.gif" />
+    <Content Include="public\help\liquid.png" />
+    <Content Include="public\help\newproject.png" />
+    <Content Include="public\help\newwindow.png" />
+    <Content Include="public\help\oa1.png" />
+    <Content Include="public\help\oa2.png" />
+    <Content Include="public\help\painter.png" />
+    <Content Include="public\help\paper0.png" />
+    <Content Include="public\help\paper1.png" />
+    <Content Include="public\help\paperanim.gif" />
+    <Content Include="public\help\particle.png" />
+    <Content Include="public\help\prefab.png" />
+    <Content Include="public\help\randomtiled.png" />
+    <Content Include="public\help\sceneorder.png" />
+    <Content Include="public\help\settings.png" />
+    <Content Include="public\help\sprite0.png" />
+    <Content Include="public\help\spriteanim0.png" />
+    <Content Include="public\help\spriteanim1.gif" />
+    <Content Include="public\help\testcomponent3.png" />
+    <Content Include="public\help\testcomponent4.png" />
+    <Content Include="public\help\text1.png" />
+    <Content Include="public\help\TopmenuItem.png" />
+    <Content Include="public\help\TopmenuItem2.png" />
+    <Content Include="public\help\TopmenuItem3.png" />
+    <Content Include="public\help\workArea.png" />
+    <Content Include="public\img\close.png" />
+    <Content Include="public\index.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\libs\contextMenu.min.css" />
+    <Content Include="public\libs\css\bootstrap-theme.css" />
+    <Content Include="public\libs\css\bootstrap-theme.min.css" />
+    <Content Include="public\libs\css\bootstrap.css" />
+    <Content Include="public\libs\css\bootstrap.min.css" />
+    <Content Include="public\libs\css\goldenlayout-base.css" />
+    <Content Include="public\libs\css\goldenlayout-dark-theme.css" />
+    <Content Include="public\libs\css\goldenlayout-light-theme.css" />
+    <Content Include="public\libs\css\jqtree.css" />
+    <Content Include="public\libs\folder\images\application.png" />
+    <Content Include="public\libs\folder\images\code.png" />
+    <Content Include="public\libs\folder\images\css.png" />
+    <Content Include="public\libs\folder\images\db.png" />
+    <Content Include="public\libs\folder\images\directory.png" />
+    <Content Include="public\libs\folder\images\doc.png" />
+    <Content Include="public\libs\folder\images\file.png" />
+    <Content Include="public\libs\folder\images\film.png" />
+    <Content Include="public\libs\folder\images\flash.png" />
+    <Content Include="public\libs\folder\images\folder_open.png" />
+    <Content Include="public\libs\folder\images\html.png" />
+    <Content Include="public\libs\folder\images\java.png" />
+    <Content Include="public\libs\folder\images\linux.png" />
+    <Content Include="public\libs\folder\images\music.png" />
+    <Content Include="public\libs\folder\images\pdf.png" />
+    <Content Include="public\libs\folder\images\php.png" />
+    <Content Include="public\libs\folder\images\picture.png" />
+    <Content Include="public\libs\folder\images\ppt.png" />
+    <Content Include="public\libs\folder\images\psd.png" />
+    <Content Include="public\libs\folder\images\ruby.png" />
+    <Content Include="public\libs\folder\images\script.png" />
+    <Content Include="public\libs\folder\images\spinner.gif" />
+    <Content Include="public\libs\folder\images\txt.png" />
+    <Content Include="public\libs\folder\images\xls.png" />
+    <Content Include="public\libs\folder\images\zip.png" />
+    <Content Include="public\libs\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="public\libs\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\libs\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public\libs\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="public\libs\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="public\libs\images\ui-icons_444444_256x240.png" />
+    <Content Include="public\libs\images\ui-icons_555555_256x240.png" />
+    <Content Include="public\libs\images\ui-icons_777620_256x240.png" />
+    <Content Include="public\libs\images\ui-icons_777777_256x240.png" />
+    <Content Include="public\libs\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="public\libs\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="public\libs\jquery-ui.css" />
+    <Content Include="public\reset.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\socketOn.js" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="help\" />
+    <Folder Include="plugins\" />
+    <Folder Include="public\help\" />
+    <Folder Include="public\img\" />
+    <Folder Include="public\libs\folder\" />
+    <Folder Include="public\libs\folder\images\" />
+    <Folder Include="public\libs\images\" />
+    <Folder Include="solution\" />
+    <Folder Include="public\assets\" />
+    <Folder Include="public\libs\" />
+    <Folder Include="public\libs\css\" />
+    <Folder Include="public\libs\fonts\" />
+    <Folder Include="public\libs\js\" />
+    <Folder Include="public\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

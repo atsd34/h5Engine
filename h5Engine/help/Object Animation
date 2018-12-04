@@ -1,0 +1,46 @@
+Object Animation and Its window
+	NOTE : To Use Object animation you need to import objectAnimator plugin. If you didnt add during project creation you can import by Top menu -> File -> Import Plugin -> Check objectAnimator -> Click import button
+	What is it:
+		Object animation is a way to animate objects with changing its attributes over time saving this information and trigger changes at any moment. For example you can have 1 object called "body" and it has 6 children "Head,LeftArm,RightArm,Torso,LeftLeg,RightLeg" you can add objectAnimator component to body then changing it's children's rotation and position you can create walk idle etc. animations. 
+		Most of the attributes are animatable so you can create cinematics or cutscenes with your imaginations. Dont forget you can animate your own components if it is responsive to its attributes.
+	Usage:
+		Select gameobject you want to animate. Then Add "objectAnimator" component. This will control this gameobject and all of its children.
+		playOnStart : Default animation name that will run as game object loaded if you dont want to autoload animation at start leave empty.
+		loopCount: If you set playOnStart animation that animation will be looped as you set this. if you set -1 it will be looped forever.
+		Add New animation Button : Creates new animation, you can set name desired FPS and number of frames here.(Or You can edit after but you cannot edit name)
+		After you add new animation new buttons will appear;
+		Edit "Name" Properties : You can change FPS or number of frames after creation
+		X: Delete animation
+		Start Recording "Name" : When you click this button all changes done to selected game object and its children will be recorded to current frame. After you done record object will be resetted to original values. This will also hide buttons on component but more importantly creates new Object Animation Window.
+		@@oa1.png@@
+	Object Animation window:
+		When you create new animation there will be only 2 things on window . Stop recording button which stops recording and save changes to animation. An a slider to set frame.
+		Take slider to any frame then start to change any attribute from properties window. This will create new keyframe. And keyframes start to appear. Then take frame slider to different time change same attribute again. If the attribute you are changing is a number empty frames will be auto calculated to create tween. If it is not number only keyframes will hold change information.
+		After you create animation you can delete keyframes by; first select keyframes that will be deleted by clicking on them then right click one of them select "Delete Selected". if you delete all keyframes from any property that property will not be shown on window anymore.
+		To do fine tuning you can move keyframes by selecting frames then right click and click "Move selected". This will prompt popup message "how many frames you want to move" . As pointed earlier you can select multiple keyframes from multiple attributes from multiple frames all keyframes will move relative to its current frame. So you can enter negative numbers if you want to move backwards.
+		After everything is done and you create animation click on "Stop Recording" to save your work.
+		@@oa2.png@@
+	Coding
+		After you have some object animation you can control this animations from code. 
+		NOTE : Examples below assumes you have "testGO" game object and it has two animations "idle" ,"shoot"
+		Play: to play an animation you can use playXTimes("Animation Name", [loop count, -1 for infinite], callbackFunction) function on objectAnimator component. 
+		//Example to play shoot animation then idle forever.
+		objects.testGO.objectAnimator.playXTimes("shoot",1,function(){
+			objects.testGO.objectAnimator.playXTimes("idle",-1); //Short version , objects.testGO.objectAnimator.loop("idle");
+		});
+		Get Current Animation: If you need to get current animation's name you can use playing attribute, If no animation is present it will be undefined.
+		//Example
+		if(objects.testGO.objectAnimator.playing=="idle") //Only shoot during idle
+			objects.testGO.objectAnimator.playXTimes("shoot",1);
+		Get current frame : When an animation is playing you can get its current frame from currentFrame attribute. 
+		Stop Animation with current frame: If you use stop function it will stop animation immediately 
+		Go To Frame: If you want to set all attributes to a frame's state you can use gotoFrame("Animation name",[frame number ]) function 
+		//Example
+		 objects.testGO.objectAnimator.loop("idle"); //play idle animation
+		 setTimeout(function(){ //set timeout for test purposes
+			 objects.testGO.objectAnimator.stop(); //stop animation at current frame.
+			 objects.testGO.objectAnimator.gotoFrame("idle",0) // We dont know at which frame animation ended but we want to set first frame.
+		 },1000);
+			
+
+		

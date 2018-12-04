@@ -1,0 +1,21 @@
+Built-in Script Editor
+		When you double click any javascript file in Assets window an new javascript window will be open, You can dock move that window anywhere and if you open other javascript this will be closed and new javascript will be open in same place. 
+		You can quickly edit javascript files in editor. 
+	Short-cuts:
+		- CTRL-S : Save current file.
+		- CTRL-B : Beautify, arrange indents.
+		- CTRL-Z : Undo
+		- CTRL-Y : Redo
+
+	Advantages of Built-in Editor.
+		- It opens fast works fast have all basic features
+		- It is integrated in editor you dont need any 3rd party editor.
+		- Javascript based (We all love javascript right? )
+		- Easy workflow
+	Advantages of using Visual studio instead of Built in Editor
+		- Full featured automatically integrated one of the best IDE (In my opinion is the best but that debatable)
+		- Better code navigation
+		- Visual studio debugging
+		- Tons tons of features
+		Editor:
+		@@javascript.png@@

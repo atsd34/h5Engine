@@ -1,0 +1,62 @@
+	Properties Window
+		Properties window shows current attributes of selected game object from editor. You can change gameobject values from here to set loading values or when you are using object animator, you can set that frame's desired value. 
+		All of the components added to current gameObject shown here. You can add more components with combobox at the end or remove component by pressing "X" on that component's header.
+		Customization
+		Properties window dynamically gets all attributes of gameobject and creates input for editing. But you can change default behaviour in different ways while you code your component.
+		- Hiding A Variable From Properties Window: if you set private attribute of gameobject (Generally you want to do that while you design your component) you can set some of the properties not visible in properties window.
+		Usage : this.private={"Name of the property that needs to be hide":true}
+		//Code
+		//Example 1
+		//This component will never show its "Attribute" or "private" attributes on properties Window
+		gm.TestComponent=function(){
+			this.Attribute="Hide Me";
+			this.private ={Attribute:true}
+		}
+		//Example 2
+		//This component always show "Toggle" attribute as checkbox, if you check checkbox it will also show "Attribute" attribute, if you toggle off textbox will be hidden.
+		gm.TestComponent0=function(){
+			this.Toggle=false;
+			this.Attribute="Hide/Show Me";
+			this.private ={Attribute:true};		
+			var $this = this;
+			if (INEDITOR) //You dont need this in actual game
+				newObservable(this, "Toggle", undefined, function () { //Creates new observable and triggers function when Toggle attribute change
+					$this.private.Attribute=!$this.Toggle;
+					if(selectedSprite==$this.gameObject) //Only redraw when this gameobject is selected
+						reDrawPanel($this.gameObject);
+				});
+		}
+		- Set Combobox : You can limit choices that can be set of an attribute by transforming it into combobox easily.
+		Usage : this.comboBoxes ={"Attribute that stores value's Name" : "Combox options string array"}
+				Or : this.comboBoxes ={"Attribute that stores value's Name" : "Combox options text/value object array = {name:'option s text to be shown', value:'when selected this will be set to var' "}
+		//Code
+		//Example 1
+		//In this example there is two string property in component which is presented by two static combobox
+		gm.TestComponent1=function(){
+			this.Attribute1="";
+			this.Attribute2="0";
+			this.comboBoxes ={Attribute1:["Choice1","Choice2"],
+								Attribute2:[{text:"Zero",value:"0"},{text:"One",value:"1"},{text:"Two",value:"2"}]
+								}
+		}
+		//Example 2
+		//In this example Attribute1 has dynamic combobox which changes its options depending on other variable Word's letters.
+		gm.TestComponent2=function(){
+			this.Attribute1="";
+			this.Word="";
+			this.comboBoxes ={};
+			this.comboBoxes.Attribute1=[];
+			var $this = this;
+			if (INEDITOR) //You dont need this in actual game
+				newObservable(this, "Word", undefined, function () { //Creates new observable and triggers function when Toggle attribute change
+					$this.comboBoxes.Attribute1=[];
+						for (var i = 0; i < $this.Word.length; i++) {
+							$this.comboBoxes.Attribute1.push( $this.Word[i]);
+						}
+					if(selectedSprite==$this.gameObject) //Only redraw when this gameobject is selected
+						reDrawPanel($this.gameObject);
+				});
+		}
+
+		- Custom Editor : Sometimes default behaviors of property inputs are not enough, you need more customization. In that case you can create your own property editors by adding HTML and little code.
+		More information can be found at @Custom Editor for properties@

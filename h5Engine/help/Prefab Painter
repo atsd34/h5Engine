@@ -1,0 +1,5 @@
+Prefab Painter Tool
+		When you double click "Prefab Painter" button in Assets window an new Prefab Painter window will be open, You can dock move that window anywhere,
+		You can quickly place prefabs scene with this new tool.
+		All prefabs will be shown in window. Also grid settings can be changed to arrange imaginary grid in scene to place objects in better alignment. Click on any prefab which is shown by its name and image represantation then when you click in game editor window that prefab will be placed nearest grid.
+		@@prefab.png@@

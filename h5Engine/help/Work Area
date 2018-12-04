@@ -1,0 +1,17 @@
+	h5Editor
+		h5Editor is designed to take burden of making games by doing most of time consuming things background automatically. It has WYSIWYG editor to design levels easily, asset system to make game assets more managable also plugin system for code reusability and to make easier to change core features.
+	Work Area
+		h5Editor consist of windows to manage different systems. These Systems represented by dockable windows. You can Change places, resize and h5Engine will automatically saves state.
+		Hierarchy : Current Scene's game object hierarcy
+		Assets : Project's Assets available to use, or creating new ones.
+		Game Design Area: WYSIWYG game level /scene editor. 
+		Properties : Selected Game Objects's highly customizable component view.
+		Other Windows
+		Script Editor : Script Asset text/javascript editor. 
+		Prefab Painter : Easy level creation
+		Paper Animation Editor : To create animation with different images (To create spritesheet animation please go to sprite component)
+		Tile Map Editor : Tile map component use this editor.
+		Object Animation : To create animation by changing gameobject and its children you can use object animation (You can change most of the attributes of any component)
+		Custom window : You can create Your own windows/editors (Expert)
+		Default h5Engine View:
+		@@workArea.png@@

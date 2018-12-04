@@ -1,0 +1,1 @@
+gm.VampireCloud=function(){},gm.VampireCloud.prototype.create=function(){var e=this;this.gameObject.sprite.playOnceAnim("default",function(){e.gameObject.remove()})},gm.VampireCloud.prototype.update=function(e){},gm.VampireCloud.prototype.dispose=function(){};

@@ -1,0 +1,26 @@
+Top Menu
+		Top menu contains commands needed for game engine.
+	File
+		- Open With Visual Studio : Opens current game code with visual studio. If you disable connectedVisualStudio from settings some inconsistencies may occur. So make sure it is enabled.
+		- Open Project : To open existing project (change current project) click this, then enter local path of solution.
+		- New Project : To create new project click menu item then in popup window; Enter full path of new projects desired folder on your computer. This is where all files of your project will be saved. Then select all needed pre-installed plugins according to your project needs. If you are unsure you can add any plugin whenever you need so add essentials.
+		- Export Project(Test First Scene)  , Shortcut : F6 Key : When this option used your game will run with the first scene which is set in Scene order (File -> Scene Order). To run this option you have to have at least 1 scene and set scene order. And if you are working on the first scene and it is not saved, it will run last saved version.
+		- Export Project(Test Current Scene)  , Shortcut : F7 Key : When this option used your game will run with the current scene you are working even its is not saved. (It will ignore last save of current scene)
+		- Scene Order : This will open new popup window where you can arrange scene order. you can drag items to set its order or you can drag scenes between Scene Order and Unused Scene. 
+		NOTE: When you create new scene it will be on unused scenes so you need to put in order manually.
+		- Import Plugin : Import/ReImport existing plugin to current project click menu item then select plugins from popup then click import (More information on Plugin Management)
+		- Save Plugin : To Create new plugin or change existing plugin you can use this menu item (More information on Plugin Management)
+		- Recent List : At the end of File menu there will be last used 10 projects for easier project changing. Click one of them to directly open project.
+	Others
+		Back Arrow- Undo : Undo last change (Undoes persist throug sessions)
+		FW Arrow-Redo : Redo last undo (Redoes persist throug sessions)
+		Hide/Show GUI Toggle: Hides or shows GUI elements in current scene's gameview.
+		Hierarchy, Scene ,Properties, Assets : If you close one of the essential window you can show that window by clicking its menu item.
+	Settings
+		You can change project settings through top menu "Settings" Button. Popup contains below attributes	
+		Pixel Perfect : If you enable this option images will be rendered with "Nearest" option, if you disable this option images will be rendered bilinear
+		AutoWidth-Width: If you enable Autowidth width will be auto calculated within current environment. If you disable, Width value will be used to create canvas with static width.
+		AutoHeight-Height: If you enable AutoHeight height will be auto calculated within current environment. If you disable, Height value will be used to create canvas with static height.
+		Header: This will be title of exported html file.
+		BackgroundColor: Default background color for project will be used in exported game as background when there is nothing else front.
+		MinWidthHeightRatio -MaxWidthHeightRatio : When project uses Auto Width and height you can limit Width/Height ratio between this values (To prevent show undesirable parts or to get better consistency)

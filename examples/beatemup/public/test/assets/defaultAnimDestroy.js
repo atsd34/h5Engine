@@ -1,0 +1,1 @@
+gm.defaultAnimDestroy=function(){},gm.defaultAnimDestroy.prototype.create=function(){var t=this;this.gameObject.sprite.playOnceAnim("default",function(){t.gameObject.remove()})},gm.defaultAnimDestroy.prototype.update=function(t){},gm.defaultAnimDestroy.prototype.dispose=function(){};

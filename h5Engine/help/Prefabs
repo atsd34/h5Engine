@@ -1,0 +1,22 @@
+Prefabs	
+		A prefab in h5Engine term is collection of game objects with one parent and all of its children (It can be single gameobject) that can be initiated whenever needed.
+		Creating new prefab is easy; Click on any gameobject on properties window click "Save Prefab" button under its name. This will create new asset that consist of selected gameobject and its children. If you are not happy with default name select asset and press f2 key to rename.
+		In editor if you double click on prefab asset in assets window this will add copy of that prefab with same values.
+		From code you have more control when adding new prefab;
+		You can add prefabs with addPrefab([prefab asset name],[default values or empty]) = [new gameobject name] function
+		//Adding prefab with default values, Assumes there is testPrefab.prefab that have its position x=0,y=0 and rotation=0, And has sprite component exists.
+		addPrefab("testPrefab.prefab"); //Adds new gameobject to scene
+		//using new gameobject
+		var createdGameObject=objects[addPrefab("testPrefab.prefab")[0]]; // Creates new gameobject from testPrefab.prefab and stores gameobject in createdGameObject variable.
+		console.log(createdGameObject.position.x); // logs 0
+		createdGameObject.position.x+=10; // And moves object 10 unit in x axis.
+		//Creating gameobject with different default values.
+		var createdGameObject=objects[addPrefab("testPrefab.prefab",{
+			position:{
+				x:10
+			},
+			sprite:{
+				path:"test.png"
+			}
+		})[0]];  //Creates prefab with altered default values, any initiation code uses these variables will take these values. 
+		console.log(createdGameObject.position.x); // logs 10

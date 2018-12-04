@@ -1,0 +1,53 @@
+Custom Editor(Advanced)
+		Sometimes default behaviors of property inputs are not enough, you need more customization. In that case you can create your own property editors by adding HTML and little code.
+		Usage: this.customDiv={"Name to define div group" : function(container_Div_That_Will_Hold_Other_Controls){ //Initialization and functions} ,"you can define More div":function(secondContainer){//More code} }
+		//Example 1
+			gm.TestComponent3=function(){
+			this.Attribute1=0;
+			var $this = this;
+			this.private={Attribute1:true};
+			this.customDiv={
+				Sliders:function(container){
+					$("&lt;span&gt; Attribute1 slider is below&lt;/span&gt;").appendTo(container);
+					var sliderdiv= $("&lt;div style='margin:10px 10px 10px 10px'/&gt;").appendTo(container);
+						$(sliderdiv).slider({
+							create: function () {
+								$('.ui-slider-handle').text($(this).slider("value"));
+							},
+							slide: function (event, ui) {
+								$('.ui-slider-handle').text(ui.value);
+								$this.Attribute1=ui.value;
+								CommitValue($this.gameObject, "TestComponent3","Attribute1"); //You need to commit value to server when you make changes for editor or else it will not be saved
+							},
+							value:$this.Attribute1,
+							min:0,
+							max:10
+						});
+					}            
+				}
+			}
+		Result :
+		@@testcomponent3.png@@
+		//Example 2
+			gm.TestComponent4 = function() {
+				this.Attribute1 = 0; //Value is not hidden you can see value as you increase or decrease
+				var $this = this;
+				this.customDiv = {
+					Buttons: function(container) {
+						addMenu("Increase Attribute1", function() {
+							$this.Attribute1++;
+							CommitValue($this.gameObject, "TestComponent4", "Attribute1");
+							if (selectedSprite == $this.gameObject)
+								reDrawPanel($this.gameObject);
+						}, "", container, "");
+						addMenu("Decrease Attribute1", function() {
+							$this.Attribute1--;
+							CommitValue($this.gameObject, "TestComponent4", "Attribute1");
+							if (selectedSprite == $this.gameObject)
+								reDrawPanel($this.gameObject);
+						}, "", container, "");
+					}
+				}
+			}
+		Result :
+		@@testcomponent4.png@@

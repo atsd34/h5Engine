@@ -1,0 +1,29 @@
+Installing
+	Install Through Source Code (Recommmended)
+		Prerequisites
+			:Visual studio (Minimum 2017 Recommended) , Download free; @https://visualstudio.microsoft.com/tr/downloads/@
+			:Visual studio Node.js tools. (During installation of Visual Studio select "Node.js Development" under Web&Cloud, if visual studio exists you can add this through Tools-> Get Tools and Features)
+		To Install h5Engine visit h5Engine site downloads section. And download latest source code. Open with visual studio Build and Run. Continue to work in Chrome
+	Install Through Executable
+		To Install h5Engine visit h5Engine site downloads section. And download latest executable. Install with easy installer. Then run program
+First Project
+	Create
+		To Create your first project open h5Engine and Select File -> New Project. Enter full path of new project's desired folder on your computer. This is where all files of your project will be saved. Then select all needed pre-installed plugins according to your project needs. If you are unsure you can add any plugin whenever you need so add essentials.
+		Then Press "Change" button to change current project.
+		New Project Popup:
+		@@newproject.png@@
+	Settings
+		You can change project settings through top menu "Settings" Button.
+		Pixel Perfect : If you enable this option images will be rendered with "Nearest" option, if you disable this option images will be rendered bilinear
+		AutoWidth-Width: If you enable Autowidth width will be auto calculated within current environment. If you disable, Width value will be used to create canvas with static width.
+		AutoHeight-Height: If you enable AutoHeight height will be auto calculated within current environment. If you disable, Height value will be used to create canvas with static height.
+		Header: This will be title of exported html file.
+		BackgroundColor: Default background color for project will be used in exported game as background when there is nothing else front.
+		MinWidthHeightRatio -MaxWidthHeightRatio : When project uses Auto Width and height you can limit Width/Height ratio between this values (To prevent show undesirable parts or to get better consistency)
+		Settings Window:
+		@@settings.png@@
+	Run Game
+		There is 3 different way to run your game. 
+		- File -> Export Project(Test First Scene)  , Shortcut ; F6 Key : When this option used your game will run with the first scene which is set in Scene order (File -> Scene Order). To run this option you have to have at least 1 scene and set scene order (See @Scene Management@ for more details). Note; if you are working on the first scene and it is not saved, it will run last saved version.
+		- File -> Export Project(Test Current Scene)  , Shortcut ; F7 Key : When this option used your game will run with the current scene you are working even its is not saved. (It will ignore last save of current scene)
+		- Visual studio : If you open project with visual studio and debug through it it will always open current scene with current state. (It will automatically sync with editor)

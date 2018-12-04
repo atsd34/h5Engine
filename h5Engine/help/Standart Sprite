@@ -1,0 +1,18 @@
+Standart Sprite Component
+		Sprite is gameobject's visual representation through images. Newly added gameobjects have their sprite component attached by default( If there is no image selected there is no overhead. So you may leave it even if you dont need )
+		:All sprite actions in h5Engine are done with beatiful sprite framework PIXI.js. It is awesome really go check it @http://www.pixijs.com/@
+		@@sprite0.png@@
+		To create static sprite just add image asset to solution, Then select image from gameobject's sprite component->path variable in Properties window. This will automatically add image to scene.
+		If you have any paperbook animation (Assets with .anim extension) you may select that animation and animation will run in your game . Adjust desired animation speed through "AnimationSpeed" property(Lower is slower).
+	Coding
+		You can access sprites path through [GameObject].sprite.path variable if you set this it will redraw sprite with new image 
+		Also if you want to access low level PIXI.js API PIXI sprite is at [GameObject].sprite.sprite (Did i mention that PIXI.js is awesome?)
+		//Example 1 assumes you have "ny.png" and "im.png" assets. this component makes gameobject cycle throug this images on mousedown
+		gm.TestComponent5 = function () {    
+		}
+		gm.TestComponent5.prototype.mouseDownOnMe = function (m) {
+			if (this.gameObject.sprite.path == "ny.png")
+				this.gameObject.sprite.path = "im.png";
+			else
+				this.gameObject.sprite.path = "ny.png";
+		}

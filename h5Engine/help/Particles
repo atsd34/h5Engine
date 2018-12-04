@@ -1,0 +1,20 @@
+Particle System
+		To add particle system, add "particle" component to gameobject then configure with your needs.
+		maxLife: Every particle have their own life set with this value when they created.
+		minSpeed: Minimum speed of a particle.
+		maxSpeed: Maximum speed of a particle.
+		velocityX : Starting horizantal velocity of particle (can be negative)
+		velocityY : Starting vertical velocity of particle (can be negative)
+		velocityRandomness : velocityX and Y can be varied with random value with this. This way every particle will have different velocity.
+		startSize : Size of a particle hen it is spawned.
+		endSize : Estimated size of a particle when its life is over (destroyed)
+		minRotation : Every particle rotates with their velocity you can limit it with this.
+		maxRotation : Every particle rotates with their velocity you can limit it with this.
+		maxRotationRandomness : Every particle can have different amount of rotation within random value set by this.
+		maxParticle: MAximum number of particles allowed. When Current particle count hits this number new particles arent spawned until some of the particles destroyed (Through life)
+		particleSpawnSpeed : Number of particles spawned can be set with this.
+		tintByLife : Particles can change its color throuhout its life-cycle you can set an array of colors here.
+		path : Particle's image path.
+		AnimationSpeed : If particle image is an paperbook animation this value sets its animation speed (Yes particles can be animated.)
+
+		@@particle.png@@

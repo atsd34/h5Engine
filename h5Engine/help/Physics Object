@@ -1,0 +1,54 @@
+Physics Objects
+	Inspector
+		To make any object as a physics object so it will obey physics world just add "Physics" component. Physics object will syncronize its position and rotation to "position" components fields.Other inspector properties are;
+		isLiquid : Set object as liquid , more info at @Liquid@
+		debugDraw : If set to true , a shape will be drawn with objects collider shape. 
+		colliderType: Can set collider type as box, circle , polygon or as concave. Polygon and concave essentially same but if your polygon is not concave you should select polygon to save some loading time (its not too big i promise but with lots of polygon it may matter)
+		When box selected -width, height: Box'es width and height you can see red shape visually when you change default box size.
+		When circle selected - radius : Circle's radius in h5Units. You can see circle visually with new radiuses.
+		When polygon or Concave selected - Edit Button (At the end) : When you click on "Edit" button you can change shape of polygon or concave. you can move points by clicking (selecting) on them then dragging them. or you can click on any point of line to add new points. Finally when you press "DEL" button from keyboard selected point will be deleted. When you are happy with the shape press stop button to end shaping.
+		damping,friction,restitution,density : Physics properties for material.
+		static : Static objects dont move with force or gravity you can toggle this ability with this.
+		isSensor : Sensor objects dont interract with other objects except creating events. When you need this behaviour you can toggle this property.
+		isBullet : Bullets are very high velocity object that require more calculations.
+		fixedRotation : If object's rotation shouldn't be controlled by physics engine check this. (For example main character for platform game.)
+		When you set your objects properties nothing more is required to make object act as an physics object (It will have body and shape automatically)
+	Coding
+		If user actions/options etc will influence physics object (for example it will move, change places) you need some custom code.
+		Prenote : You can access all of inspector values as usual; 
+		//Example assumes GameObject0 has Physics component
+		objects.GameObject0.Physics.static=true; // Makes object static
+
+		Other hidden properties are;
+		body : This is where box2d body stored use this if you know box2d API only. Also some h5Engine properties may reset body (for example static property). You can access everything about this physics object fixturelist, shapes etc.
+		velocityX,velocityY : Easy way to add velocity. Object will gain speed based on this.
+		//Example 2 assumes GameObject0 has Physics component
+		objects.GameObject0.Physics.velocityY=-1000; //Makes object jump upwards.
+
+		//Example 3 assumes GameObject0 has Physics component, Also assumes there is GameObject1 as static object and they are touching.
+		var contacts=objects.GameObject0.Physics.body.m_contactList;
+		while(contacts!=null){
+			var other=undefined;
+			if(contacts.contact.m_fixtureA.m_body==objects.GameObject0.Physics.body)
+				other=contacts.contact.m_fixtureB.m_body;
+			else
+				other =contacts.contact.m_fixtureA.m_body;
+			console.log(other.gameObject.name.value); //logs GameObject2
+			contacts=contacts.next;
+		}
+
+	Events
+		Every component has 3 predefined events about Physics.Namely beginContact,endContact,impact. This events are triggered by physics engine if only some of the components has these events. 
+		Usage: 
+		gm.[ComponentName].prototype.beginContact = function (other) { /* things */} : This will be called if only gameobject has both Physics and [ComponentName] component. Everytime contact begins this will be executed where "other" is gameObject reference to other gameobject.
+		gm.[ComponentName].prototype.endContact = function (other) { /* things */} : The only difference is this is called when contact ends.
+		gm.[ComponentName].prototype.impact = function (other) { /* things */} : This will be called during impact.
+
+		//Example This component will make object to slide when touches static physics object
+		gm.events = function(){ 
+		}
+		gm.events.prototype.beginContact = function (other) { 
+			console.log(other);
+			if(other.Physics.static)
+				this.gameObject.Physics.velocityX=100;
+		}

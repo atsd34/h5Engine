@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-web-app2",
+  "version": "0.0.0",
+  "description": "NodejsWebApp2",
+  "main": "server.js",
+  "author": {
+    "name": "atsd"
+  },
+  "dependencies": {
+    "adm-zip": "^0.4.7",
+    "node-watch": "^0.5.5",
+    "prettydiff2": "^2.2.7",
+    "socket.io": "^2.0.1",
+    "uglify-js": "^3.0.1",
+    "wrench": "^1.5.9"
+  }
+}
