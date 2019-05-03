@@ -1,0 +1,1 @@
+gm.MainSprite=function(){},gm.MainSprite.prototype.create=function(){},gm.MainSprite.prototype.update=function(t){this.gameObject.position.rotation=-objects.Main.position.rotation},gm.MainSprite.prototype.dispose=function(){};

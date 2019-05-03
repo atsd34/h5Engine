@@ -150,6 +150,7 @@ var app = http.createServer(function (request, response) {
             contentType = 'audio/wav';
             break;
         default:
+            contentType = 'text/plain';
             break;
     }
 

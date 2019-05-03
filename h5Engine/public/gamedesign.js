@@ -15,6 +15,7 @@ var cameraX;
 var cameraY;
 var simulating = false;
 var editorLoadComplete = [];
+var camera;
 function runGame() {
     loadScene("currentScene");
     simulating = true;
